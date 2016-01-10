@@ -35,7 +35,7 @@ foreach my $key(@src_data){
 			name => $name,
 			value => "$value",
 		},
-		ctime => 'sysdate',
+		ctime => 'ctime',
 		table => 'temp',
 	);
 };
