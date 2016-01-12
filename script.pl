@@ -23,6 +23,7 @@ open (SOURCE,"< $src_file") || die "Can't open file: $src_file";
 @src_data = split(' ',substr(<SOURCE>,,23));
 close SOURCE;
 
+print localtime(time)."\n";
 foreach my $key(@src_data){
 	my($name,$value) = split('=',$key);
 	$value=~s/(,)/./; #Change separate
