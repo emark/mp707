@@ -9,9 +9,13 @@ use YAML::XS 'LoadFile';
 
 my $config = LoadFile('config.yaml');
 
-my $src_file = 'BM1707.temp';
+chdir('logs');
+my @src_files = <*.dat>;
 my @src_data = ();
 
+print @src_files;
+my $src_file;
+exit;
 my $dbi = DBIx::Custom->connect(
    dsn => "dbi:mysql:database=$config->{database}",
    user => $config->{user},
@@ -42,4 +46,3 @@ foreach my $key(@src_data){
 };
 
 1;
-
