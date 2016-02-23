@@ -34,11 +34,10 @@ while(<@src_files>){
 	
 	push @log,"Sensor readings: ".@src_data;
 	my $line = 0;
-	print "\e[H\e[J";#Clear display
 
 	foreach my $key(@src_data){
 		$line++;
-		print "\e[K\e[H>Reading file $file:".@src_files."\t$line:".@src_data." lines\n";
+		print "> Reading file $file:".@src_files."\t$line:".@src_data." lines\n";
 
 		my ($date,$time) = split(' ',substr($key,1,19));
 		my @sensors = split(' ',substr($key,23));
